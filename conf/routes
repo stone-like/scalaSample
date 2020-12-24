@@ -1,6 +1,6 @@
 GET    /posts               controllers.TextboardController.get()
 POST   /posts               controllers.TextboardController.post()
-PATCH  /posts               controllers.TextboardController.update()
+
 
 
 GET    /assets/*file   controllers.Assets.versioned(path="/public", file: Asset)

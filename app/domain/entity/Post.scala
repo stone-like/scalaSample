@@ -8,8 +8,8 @@ case class Post(id:Long,body:String,date:OffsetDateTime)
 
 object Post {
   implicit val writes:Writes[Post] = Json.writes[Post]
-  implicit val reads:Reads[Post] = Json.reads[Post]
-  def apply(id:Long = 0,body: String, date: OffsetDateTime): Post =
-    Post(id, body, date)
+//  implicit val reads:Reads[Post] = Json.reads[Post]
+  def apply(body: String, date: OffsetDateTime): Post =
+    Post(0, body, date)
 }
 

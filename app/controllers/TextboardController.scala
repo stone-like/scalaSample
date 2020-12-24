@@ -47,18 +47,18 @@ class TextboardController @Inject()(val controllerComponents: ControllerComponen
         BadRequest(Json.toJson(Response(Meta(400, Some(errorMessage)))))
       },
       postRequest => {
-        val post = Post(body=postRequest.body, date=OffsetDateTime.now)
+        val post = Post(postRequest.body,OffsetDateTime.now)
         PostService.post(post)
         Ok(Json.toJson(Response(Meta(200))))
       }
     )
   }
 
-  def update = Action { implicit request =>
-
-    val post = Json.parse(request.body.toString)
-    println(post)
-//    PostService.update(post)
-    Ok(Json.toJson(Response(Meta(200))))
-  }
+//  def update = Action { implicit request =>
+//
+//    val post = Json.parse(request.body.toString)
+//    println(post)
+////    PostService.update(post)
+//    Ok(Json.toJson(Response(Meta(200))))
+//  }
 }
